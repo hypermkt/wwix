@@ -13,6 +13,6 @@ class TemplateController extends Controller
         // TODO: Change host by env.
         $response = $client->get('http://localhost:1323/v1/website_templates');
         $templates = \GuzzleHttp\json_decode($response->getBody());
-        return view('template.index')->with('templates', $templates);
+        return view('template.index')->with('templates', $templates->website_templates);
     }
 }
