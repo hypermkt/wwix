@@ -11,14 +11,18 @@ import (
 	"github.com/gocraft/dbr"
 )
 
-type WebsiteTemplate struct {
+type WebsiteTemplateJson struct {
 	Id   int    `json:"id"`
 	Name string `json:"name"`
 }
 
-type DbWebsiteTemplate struct {
+type WebsiteTemplateDb struct {
 	Id   int    `db:"id"`
 	Name string `db:"name"`
+}
+
+type WebsiteTemplateResponse struct {
+	WebsiteTemplates []WebsiteTemplateJson `json:"website_templates"`
 }
 
 var (
@@ -39,8 +43,11 @@ func main() {
 }
 
 func SelectWebsiteTemplates(c echo.Context) error {
-	var templates []DbWebsiteTemplate
-	sess.Select("*").From("website_templates").Load(&templates)
+	var t []WebsiteTemplateJson
+	sess.Select("*").From("website_templates").Load(&t)
 
-	return c.JSON(http.StatusOK, templates)
+	response := new(WebsiteTemplateResponse)
+	response.WebsiteTemplates = t
+
+	return c.JSON(http.StatusOK, response)
 }
