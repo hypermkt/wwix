@@ -1,0 +1,11 @@
+version: '2'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.api
+    ports:
+      - 1323:1323
+    volumes:
+      - "./api/:/go/src/app"
+    command: go run server.go
