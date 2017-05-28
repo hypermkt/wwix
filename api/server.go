@@ -19,7 +19,6 @@ func main() {
 			{Id: 2, Name: "Cute Template"},
 		}
 		return c.JSON(http.StatusOK, templates)
-		//return c.String(http.StatusOK, "Hello, World!")
 	})
 
 	e.Logger.Fatal(e.Start(":1323"))
