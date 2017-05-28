@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use GuzzleHttp\Client;
 
 class StaticController extends Controller
 {
@@ -23,7 +24,11 @@ class StaticController extends Controller
 
     public function templates()
     {
-        return view('static.templates');
+        $client = new Client();
+        // TODO: Change host by env.
+        $response = $client->get('http://localhost:1323/v1/website_templates');
+        $templates = \GuzzleHttp\json_decode($response->getBody());
+        return view('static.templates')->with('templates', $templates);
     }
 
     public function support()
