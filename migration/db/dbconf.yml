@@ -1,0 +1,3 @@
+development:
+    driver: mymysql
+    open: wwix_development/root/
