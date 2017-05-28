@@ -16,6 +16,11 @@ class StaticController extends Controller
         return view('static.features');
     }
 
+    public function explore()
+    {
+        return view('static.explore');
+    }
+
     public function subscriptions()
     {
         return view('static.subscriptions');

@@ -13,6 +13,7 @@
 
 Route::get('/', 'StaticController@top');
 Route::get('/features', 'StaticController@features');
+Route::get('/explore', 'StaticController@explore');
 Route::get('/subscriptions', 'StaticController@subscriptions');
 Route::get('/templates', 'TemplateController@index');
 Route::get('/support', 'StaticController@support');
