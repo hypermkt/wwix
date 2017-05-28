@@ -14,5 +14,5 @@
 Route::get('/', 'StaticController@top');
 Route::get('/features', 'StaticController@features');
 Route::get('/subscriptions', 'StaticController@subscriptions');
-Route::get('/templates', 'StaticController@templates');
+Route::get('/templates', 'TemplateController@index');
 Route::get('/support', 'StaticController@support');
