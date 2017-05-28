@@ -10,4 +10,24 @@ class StaticController extends Controller
     {
         return view('static.top');
     }
+
+    public function features()
+    {
+        return view('static.features');
+    }
+
+    public function subscriptions()
+    {
+        return view('static.subscriptions');
+    }
+
+    public function templates()
+    {
+        return view('static.templates');
+    }
+
+    public function support()
+    {
+        return view('static.support');
+    }
 }
