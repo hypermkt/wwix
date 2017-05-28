@@ -1,4 +1,11 @@
 # API
+
+## Setup
+```sh
+$ go get -u github.com/golang/dep/cmd/dep
+$ dep ensure
+```
+
 ## curl
 ```sh
 $ curl -v http://localhost:1323/v1/website_templates | jq .
